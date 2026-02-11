@@ -6,7 +6,7 @@ import { IS_STATIC_EXPORT, staticHandler } from "$lib/static_export/middleware";
 export const SESSION_TOKEN_KEY = "noctf-session-token";
 
 export const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+  import.meta.env.VITE_API_BASE_URL || "https://disorientation.cssa.club/api";
 const client = createClient<paths>({
   baseUrl: API_BASE_URL,
   fetch: IS_STATIC_EXPORT ? (r) => staticHandler.handleRequest(r) : undefined,

@@ -243,7 +243,7 @@
             }}
             type="text"
             disabled={["correct", "submitting"].includes(flagSubmitStatus)}
-            placeholder={"noCTF{...}"}
+            placeholder={"disorientation{...}"}
             required
             class={"w-full input input-bordered flex-grow pop duration-200 transition-colors focus:outline-none focus:pop focus:ring-0 focus:ring-offset-0 " +
               (flagSubmitStatus == "incorrect"
