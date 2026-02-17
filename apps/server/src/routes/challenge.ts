@@ -132,7 +132,7 @@ export async function routes(fastify: FastifyInstance) {
           team.division_id,
           team.team_id,
         );
-        if (!entry || entry.solves.find(({ challenge_id }) => challenge_id == challenge.chained_after) === null) {
+        if (!entry || entry.solves.find(({ challenge_id }) => challenge_id == challenge.chained_after) === undefined) {
           const chained = await challengeService.get(challenge.chained_after);
           throw new ChainedNotCompleted(`Please solve "${chained.title}" to view this chained challenge.`);
         }
@@ -248,7 +248,7 @@ export async function routes(fastify: FastifyInstance) {
           membership.division_id,
           membership.team_id,
         );
-        if (!entry || entry.solves.find(({ challenge_id }) => challenge_id == challenge.chained_after) === null) {
+        if (!entry || entry.solves.find(({ challenge_id }) => challenge_id == challenge.chained_after) === undefined) {
           const chained = await challengeService.get(challenge.chained_after);
           throw new ChainedNotCompleted(`Please solve "${chained.title}" to solve this chained challenge.`);
         }
